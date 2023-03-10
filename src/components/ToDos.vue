@@ -3,7 +3,7 @@
     <h1>My To Do App</h1>
     <ul>
       <li v-bind:key="item.id" v-for="item in todoEntries">
-        <ToDoItem v-bind:todoItem="item" />
+        <ToDoItem v-bind:todoItem="item" @delete-todo-event="$emit('delete-todo-event', item.id)" />
       </li>
     </ul>
   </div>
